@@ -1,0 +1,24 @@
+uses    crt;
+var     n,m,k,j,i,r,dem:integer;
+        a:array[1..100] of integer;
+        f:text;
+begin
+        assign(f,'gift.inp');
+        reset(f);
+        read(f,n,k,m);
+        for i:=1 to n do
+                readln(f,a[i]);
+        close(f);
+        assign(f,'gift.out');
+        rewrite(f);
+        dem:=0;
+        for i:=1 to n-2 do
+                for j:=i+1 to n-1 do
+                        for r:=j+1 to n do
+                        begin
+                                if (a[i]+a[j]+a[r]) <= m then
+                                        inc(dem);
+                        end;
+        write(f,dem);
+        close(f);
+end.
