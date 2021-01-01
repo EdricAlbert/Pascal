@@ -18,6 +18,9 @@ begin
                         write(f,solan);
                 end
         else
+                if n mod (a) = 0 then
+                        write(f,(n div a))
+        else
                 write(f,'-1');
         close(f);
 end.
