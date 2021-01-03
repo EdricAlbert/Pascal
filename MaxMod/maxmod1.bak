@@ -1,0 +1,23 @@
+uses    crt;
+var     x,y,n,k,i,dem:longint;
+begin
+        read(x,y,n);
+        k:=n div x;
+        for i:=k downto 0 do
+        begin
+                if (i*x+y)<=n then
+                begin
+                        write(i*x+y);
+                        dem:=1;
+                        break;
+                end;
+                if i=1 then
+                        write('0');
+                dem:=1;
+        end;
+        if dem<>1 then
+                write('0');
+        readln;
+end.
+
+
