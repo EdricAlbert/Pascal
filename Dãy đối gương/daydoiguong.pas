@@ -1,5 +1,5 @@
 uses    crt;
-var     n,i,j,w,dem:integer;
+var     n,i,j,w,dem,r:integer;
         kt:boolean;
         st:string;
         s:array[1..20] of char;
@@ -18,7 +18,10 @@ begin
                         break;
                 end;
         if kt = true then
-                writeln('0')
+        begin
+                dem:=2;
+                writeln('0');
+        end
         else
                 for i:=2 to length(st) do
                 begin
@@ -29,6 +32,7 @@ begin
                                         if st[i+j] <> st[i-j] then
                                         begin
                                                 kt:=true;
+                                                dem:=0;
                                                 break;
                                         end;
                                 if kt=false then
@@ -39,11 +43,13 @@ begin
                                         end;
                         end;
                 end;
-                if dem<>1 then
-                        for i:=n-1 downto 1 do
+         if (dem<>1) then
+                        for r:=n-1 downto 1 do
                                 st:=st+s[i];
-        write(length(st));
-        readln
+        if dem<>2 then
+        write(length(st)-n);
+        writeln;
+        readln;
 end.
 
 
