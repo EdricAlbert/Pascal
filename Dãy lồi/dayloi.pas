@@ -36,12 +36,15 @@ begin
                                                 begin
                                                         dem:=0;
                                                         for x:=r to n do
+                                                        begin
                                                         if a[x]<a[x+1] then
                                                                 dem:=dem+1;
                                                         if (a[x]=a[x+1]) or (a[x]>a[x+1]) or (x=n) then
                                                         begin
                                                                 vtc2:=x;
                                                                 vtd2:=x-dem;
+                                                                break;
+                                                        end;
                                                         end;
                                                 end;
                                                 if (a[vtc]<a[r]) then
