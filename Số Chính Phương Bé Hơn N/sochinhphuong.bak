@@ -1,0 +1,13 @@
+uses    crt;
+var     r:integer;
+        n:real;
+begin
+        readln(n);
+        r:=trunc(sqrt(n));
+        n:=sqrt(n);
+        if n-r=0 then
+                writeln('TRUE')
+        else
+                writeln('FALSE');
+        readln;
+end.
